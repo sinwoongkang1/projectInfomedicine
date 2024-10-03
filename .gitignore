@@ -36,4 +36,6 @@ out/
 ### VS Code ###
 .vscode/
 
-application.yml
+### setting config ###
+/src/main/resources/properties/env.properties
+/src/main/resources/application.yml
