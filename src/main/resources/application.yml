@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: informedicine
+
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://database-ksw.cp646iwss3x6.ap-northeast-2.rds.amazonaws.com/project
+    username: admin
+    password: samk36ang
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
