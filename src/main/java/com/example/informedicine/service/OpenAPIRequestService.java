@@ -19,8 +19,8 @@ public class OpenAPIRequestService {
     String type = "xml";
 
     public String requestAPI(String foodName) throws UnsupportedEncodingException {
-    String encodedFoodName = URLEncoder.encode(foodName,"UTF-8");
-    String body = endPoint+serviceKey+"&pageNo="+pageNo
+        String encodedFoodName = URLEncoder.encode(foodName, "UTF-8");
+        String body = endPoint+serviceKey+"&pageNo="+pageNo
                                                 +"&numOfRows="+numOfRows
                                                 +"&type="+type
                                                 +"&FOOD_NM_KR="+encodedFoodName;

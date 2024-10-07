@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
 
 import java.io.UnsupportedEncodingException;
+import java.net.URI;
+import java.net.URISyntaxException;
 
 @Slf4j
 @RestController
@@ -18,11 +20,10 @@ public class ApiController {
     private final RestTemplate restTemplate;
 
     @GetMapping("/getAPI")
-    public ResponseEntity<String> requestOpenAPI() throws UnsupportedEncodingException {
-        String requestURL =  openAPIRequestService.requestAPI("소머리국밥");
-        String response = restTemplate.getForObject(requestURL, String.class);
-        log.info(requestURL);
-        log.info(response);
+    public ResponseEntity<String> requestOpenAPI() throws UnsupportedEncodingException, URISyntaxException {
+        String requestURL =  openAPIRequestService.requestAPI("돼지고기");
+        URI uri =  new URI(requestURL);
+        String response = restTemplate.getForObject(uri, String.class);
         return ResponseEntity.ok(response);
     }
 }
